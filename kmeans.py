@@ -30,24 +30,3 @@ def k_means(data_points, num_clusters, max_iterations):
 
     # Return the final centroids and the assignments of the data points
     return centroids, closest
-
-
-
-def calculate_wcss(data, centroids, labels):
-    """Calculate the within-cluster sum of squares (WCSS).
-    
-    Args:
-    - data (np.ndarray): The data points as a 2D array with shape (n_samples, n_features).
-    - centroids (np.ndarray): The cluster centroids as a 2D array with shape (n_clusters, n_features).
-    - labels (np.ndarray): The cluster labels as a 1D array with shape (n_samples,).
-    
-    Returns:
-    - wcss (float): The WCSS value.
-    """
-    wcss = 0.0
-    for k in range(len(centroids)):
-        cluster_data = data[labels == k]
-        centroid = centroids[k]
-        squared_distances = np.sum((cluster_data - centroid) ** 2, axis=1)
-        wcss += np.sum(squared_distances)
-    return wcss

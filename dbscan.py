@@ -46,11 +46,3 @@ def dbscanFunction(data_points, eps, min_samples):
             labels[i] = neighbor_labels[0]
 
     return labels
-
-
-# # Plot the clustering results
-# plt.scatter(data_points[:, 0], data_points[:, 1], c=labels, cmap='viridis')
-# plt.title(f'DBSCAN Clustering: {len(set(labels))-1} clusters')
-# plt.xlabel('Feature 1')
-# plt.ylabel('Feature 2')
-# plt.show()
